@@ -5,11 +5,13 @@ export type SkinId =
   | "teak-lodge"
   | "elevated"
   | "white-porch"
-  | "sage-loft"
-  | "teak-linear"
-  | "teak-l"
-  | "teak-studio"
-  | "tiny-loft";
+  | "board-batten"
+  | "linear-bungalow"
+  | "wrap-cottage"
+  | "studio-cottage"
+  | "tiny-loft"
+  | "yellow-cottage"
+  | "grey-gable";
 
 export type Room = {
   id: string;
@@ -72,30 +74,40 @@ export const SKINS: Record<
     finish: "White gable, full-width teak porch",
     image: "/homes/white-porch.jpg",
   },
-  "sage-loft": {
-    label: "Sage loft",
-    finish: "Sea-glass cube, roof terrace, steel stair",
-    image: "/homes/sage-loft.jpg",
+  "board-batten": {
+    label: "Loft cottage",
+    finish: "Board-and-batten, sleeping loft, timber porch",
+    image: "/homes/board-batten.jpg",
   },
-  "teak-linear": {
-    label: "Glass bar",
-    finish: "Linear teak, full glass living wall",
-    image: "/homes/teak-linear.jpg",
+  "linear-bungalow": {
+    label: "Glass bungalow",
+    finish: "Linear clapboard, hip roof, glass living wall",
+    image: "/homes/linear-bungalow.jpg",
   },
-  "teak-l": {
-    label: "L-wrap",
-    finish: "Teak L-plan, wrap deck, shed roof",
-    image: "/homes/teak-l.jpg",
+  "wrap-cottage": {
+    label: "L-wrap cottage",
+    finish: "Two gabled wings joined as an L, wrap teak porch",
+    image: "/homes/wrap-cottage.jpg",
   },
-  "teak-studio": {
-    label: "Studio deck",
-    finish: "Compact teak, glass-rail wrap deck",
-    image: "/homes/teak-studio.jpg",
+  "studio-cottage": {
+    label: "Studio cottage",
+    finish: "Compact clapboard, charcoal hip, teal door",
+    image: "/homes/studio-cottage.jpg",
   },
   "tiny-loft": {
     label: "Loft cabin",
     finish: "Cedar tiny house with sleeping loft",
     image: "/homes/tiny-loft.jpg",
+  },
+  "yellow-cottage": {
+    label: "Sun cottage",
+    finish: "Pale-yellow clapboard, teal door, hip roof",
+    image: "/homes/yellow-cottage.jpg",
+  },
+  "grey-gable": {
+    label: "Grey gable",
+    finish: "Grey clapboard, charcoal gable, front porch",
+    image: "/homes/grey-gable.jpg",
   },
 };
 
@@ -352,42 +364,42 @@ export const HOMES: Home[] = [
 
   home(103, "canal", P202611, "white-porch", 198000, "400 sq ft teak deck at the 5 ft canal bank."),
   home(104, "canal", P21009, "teak-lodge", 212000, "Three-bed lodge, kayak steps to the water."),
-  home(105, "canal", P202628, "sage-loft", 218000, "Sage cube with a roof terrace over the canal."),
-  home(106, "canal", P21013, "teak-linear", 205000, "Glass living wall, deck almost at the water."),
-  home(107, "canal", P202625, "teak-l", 216000, "L-wrap deck facing the inland canal."),
+  home(105, "canal", P202628, "board-batten", 218000, "Board-and-batten loft cottage over the canal."),
+  home(106, "canal", P21013, "linear-bungalow", 205000, "Glass living wall, deck almost at the water."),
+  home(107, "canal", P202625, "wrap-cottage", 216000, "L-wrap porch facing the inland canal."),
 
   home(108, "canal-value", P202633, "white-bungalow", 199000, "400 sq ft canal deck, salt-white bungalow."),
   home(109, "canal-value", P21012, "teak-lodge", 208000, "Kayak walkway down the 5 ft bank."),
-  home(110, "canal-value", P202611, "mint-cottage", 196000, "Sea-glass skin, same bulk FF&E kit."),
-  home(111, "canal-value", P21009, "sage-loft", 214000, "Two-level cube on the far canal."),
-  home(112, "canal-value", P202630, "teak-studio", 188000, "Studio with wrap deck at the bank."),
-  home(113, "canal-value", P21013, "teak-linear", 205000, "Linear teak, canal-end glass."),
-  home(114, "canal-value", P202625, "teak-l", 210000, "L-plan, last lot on the inland canal."),
+  home(110, "canal-value", P202611, "mint-cottage", 196000, "Sea-glass clapboard, unfurnished shell."),
+  home(111, "canal-value", P21009, "yellow-cottage", 214000, "Sun cottage on the far canal."),
+  home(112, "canal-value", P202630, "studio-cottage", 188000, "Studio cottage with a small veranda."),
+  home(113, "canal-value", P21013, "linear-bungalow", 205000, "Linear clapboard, canal-end glass."),
+  home(114, "canal-value", P202625, "wrap-cottage", 210000, "L-plan, last lot on the inland canal."),
 
   home(234, "park", P202621, "white-bungalow", 228000, "Park street, 20×34 salt bungalow."),
   home(235, "park", P202613, "teak-lodge", 232000, "Teak lodge facing the interior street."),
   home(236, "park", P202636, "mint-cottage", 236000, "Two-bath sea-glass cottage."),
   home(237, "park", P202621, "elevated", 238000, "Raised screened porch on park street."),
   home(238, "park", P202613, "white-porch", 226000, "White porch cottage, 20×34."),
-  home(239, "park", P202636, "teak-linear", 234000, "Glass-bar living wall on the park row."),
+  home(239, "park", P202636, "grey-gable", 234000, "Grey gable on the park row."),
 
   home(241, "street", P202629, "white-porch", 186000, "One-bed porch cottage, street view."),
   home(252, "street", P202627, "mint-cottage", 192000, "Two-bed 16×24, sea-glass skin."),
-  home(253, "street", P202630, "teak-studio", 182000, "16×16 studio, wrap deck."),
+  home(253, "street", P202630, "studio-cottage", 182000, "16×16 studio, compact veranda."),
   home(254, "street", P21030, "white-bungalow", 188000, "16×20 one-bed bungalow."),
-  home(255, "street", P21026, "teak-linear", 190000, "Studio-style 16×20, teak glass."),
+  home(255, "street", P21026, "yellow-cottage", 190000, "Studio-style 16×20, sun cottage."),
   home(256, "street", P202620, "teak-lodge", 194000, "20×20 one-bed lodge."),
-  home(257, "street", P202634, "teak-l", 184000, "14×20 studio, L-deck."),
-  home(258, "street", P202623, "sage-loft", 189000, "16×20 one-bed, sage cube skin."),
+  home(257, "street", P202634, "grey-gable", 184000, "14×20 studio, grey gable."),
+  home(258, "street", P202623, "board-batten", 189000, "16×20 one-bed, loft cottage."),
   home(259, "street", P202622, "tiny-loft", 180000, "14×16 loft cabin, smallest on the street."),
 
   home(330, "gate", P202611, "white-bungalow", 198000, "First house inside the gate."),
   home(315, "gate", P21009, "teak-lodge", 212000, "On the entrance road after 330."),
-  home(314, "gate", P202628, "sage-loft", 218000, "Sage cube on the gated drive."),
+  home(314, "gate", P202628, "board-batten", 218000, "Loft cottage on the gated drive."),
   home(169, "gate", P202627, "white-porch", 192000, "Porch cottage on the gate road."),
-  home(168, "gate", P202630, "teak-studio", 188000, "Studio deck facing the drive."),
-  home(167, "gate", P21013, "teak-linear", 205000, "Linear teak on the entrance street."),
-  home(165, "gate", P202625, "teak-l", 210000, "L-wrap, last of the gate row."),
+  home(168, "gate", P202630, "studio-cottage", 188000, "Studio cottage facing the drive."),
+  home(167, "gate", P21013, "yellow-cottage", 205000, "Sun cottage on the entrance street."),
+  home(165, "gate", P202625, "wrap-cottage", 210000, "L-wrap, last of the gate row."),
 ];
 
 export const BANDS: {
@@ -403,37 +415,37 @@ export const BANDS: {
     id: "beach",
     label: "Beach 196–199",
     kicker: "20×40 · bay front",
-    blurb: "The large plans. Four mixed styles on quarter-acre lots facing the open bay, not the canal.",
+    blurb: "The large Plett plans. Four mixed wood styles on quarter-acre lots facing the open bay, not the canal.",
     aerial: "/homes/aerial-beach.jpg",
     lots: "#196 – #199",
-    price: "Furnished from $246k",
+    price: "Unfurnished from $246k",
   },
   {
     id: "canal",
     label: "Canal 103–107",
     kicker: "20×30 · middle plans",
-    blurb: "Middle-size homes on the inland canal, furthest from the ocean. 400 sq ft teak decks at a 5 ft drop to the water.",
+    blurb: "Middle-size wood homes on the inland canal, furthest from the ocean. 400 sq ft teak decks at a 5 ft drop to the water.",
     aerial: "/homes/aerial-canal.jpg",
     lots: "#103 – #107",
-    price: "Furnished $198–218k",
+    price: "Unfurnished $198–218k",
   },
   {
     id: "park",
     label: "Park 234–239",
     kicker: "20×34 · medium",
-    blurb: "Medium plans along the interior park street. Mixed skins, same furniture kit.",
+    blurb: "Medium Plett plans along the interior park street. Mixed clapboard skins, same unfurnished wood shell.",
     aerial: "/homes/aerial-park.jpg",
     lots: "#234 – #239",
-    price: "Furnished $226–238k",
+    price: "Unfurnished $226–238k",
   },
   {
     id: "street",
     label: "Street 241, 252–259",
     kicker: "16×24 and smaller",
-    blurb: "The small plans on street-view lots. Best for a year lease or a tight Airbnb.",
+    blurb: "The small Plett plans on street-view lots. Best for a year lease or a tight Airbnb.",
     aerial: "/homes/aerial-street.jpg",
     lots: "#241, #252–259",
-    price: "Furnished $180–194k",
+    price: "Unfurnished $180–194k",
   },
   {
     id: "gate",
@@ -442,16 +454,16 @@ export const BANDS: {
     blurb: "The gate sits beside lot 330. One crushed-stone road runs past every home. About a 20-minute walk to the beach.",
     aerial: "/homes/aerial-gate.jpg",
     lots: "#330, 315, 314, 169, 168, 167, 165",
-    price: "Furnished $180–250k",
+    price: "Unfurnished $180–250k",
   },
   {
     id: "canal-value",
     label: "Canal value 108–114",
     kicker: "Far canal · better price",
-    blurb: "More mixed models on the far canal. Same 400 sq ft decks, kayak steps, and bulk FF&E.",
+    blurb: "More mixed wood models on the far canal. Same 400 sq ft decks and kayak steps. Unfurnished shells.",
     aerial: "/homes/aerial-canal.jpg",
     lots: "#108 – #114",
-    price: "Furnished $180–250k",
+    price: "Unfurnished $180–250k",
   },
 ];
 
@@ -465,20 +477,23 @@ export function findHome(lot: number) {
 
 export const PALETTE = [
   { name: "Limewash", hex: "#f7f3ea", use: "Walls, ceiling" },
-  { name: "Sand linen", hex: "#e6d7c3", use: "Upholstery" },
+  { name: "Sand linen", hex: "#e6d7c3", use: "Optional textiles" },
   { name: "Sea glass", hex: "#8aa58a", use: "Accent panels" },
   { name: "Teak", hex: "#8b5e3c", use: "Millwork, decks" },
-  { name: "Lagoon", hex: "#2f6f6a", use: "Doors, textiles" },
-  { name: "Ink", hex: "#1b2420", use: "Steel, frames" },
+  { name: "Lagoon", hex: "#2f6f6a", use: "Doors, trim" },
+  { name: "Ink", hex: "#1b2420", use: "Frames, hardware" },
 ];
 
-export const FFE_KIT = [
-  "Sand-linen sofa and slipcovers",
-  "Rattan lounge chairs, one SKU",
-  "Oiled teak dining table + six chairs",
-  "Seagrass rugs in three sizes",
-  "Teak kitchen millwork, same door profile",
-  "Wet-pack: vanity, toilet, rain shower",
-  "Woven pendants and black-frame sconces",
-  "Mini-split family, one outdoor condenser type",
+export const SHELL_INCLUDES = [
+  "Stick-built wood structure from the Plett catalog",
+  "Hip or gable roof, windows, and exterior doors",
+  "Teak or timber veranda as drawn on the plan",
+  "Empty kitchen millwork — no appliances",
+  "Bath rough-in: vanity niche, toilet, shower stall",
+  "Electrical and mini-split ready, condenser not packed",
+  "Limewash interior walls, oiled teak floors",
+  "No furniture, rugs, lighting kit, or loose pieces",
 ];
+
+export const CONTAINER_SITE = "https://moonlightbaycontainerhomes.vercel.app";
+export const WOOD_SITE = "https://moonlightbaywoodhomes.vercel.app";

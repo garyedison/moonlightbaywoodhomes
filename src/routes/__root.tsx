@@ -3,7 +3,7 @@ import { AuthProvider } from "@/lib/auth/provider";
 import { PreviewHostBridge } from "@/components/preview-host-bridge";
 import appCss from "../styles.css?url";
 
-const APP_NAME = "Moonlight Bay";
+const APP_NAME = "Moonlight Bay Wood Homes";
 
 export const Route = createRootRoute({
   head: () => ({
@@ -11,7 +11,7 @@ export const Route = createRootRoute({
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: APP_NAME },
-      { name: "description", content: "Moonlight Bay de Consejo — furnished beach, canal, and gate homes in Belize." },
+      { name: "description", content: "Moonlight Bay Wood Homes — unfurnished Plett catalog bungalows at Consejo, Belize. Beach, canal, and gate lots from $180k." },
       { name: "theme-color", content: "#2f6f6a" },
     ],
     links: [

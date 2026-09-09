@@ -2,8 +2,9 @@ import { useState, type ReactNode } from "react";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import {
   BANDS,
-  FFE_KIT,
+  CONTAINER_SITE,
   PALETTE,
+  SHELL_INCLUDES,
   SKINS,
   type BandId,
   type Home,
@@ -29,7 +30,7 @@ const NAV: { id: View; label: string }[] = [
   { id: "gate", label: "Gate" },
   { id: "value", label: "Canal value" },
   { id: "lots", label: "Lots" },
-  { id: "living", label: "Living" },
+  { id: "living", label: "Inside" },
   { id: "map", label: "Site map" },
 ];
 
@@ -56,7 +57,7 @@ export function Studio() {
             className="text-left"
           >
             <p className="font-display text-lg leading-none tracking-tight">
-              Moonlight Bay
+              Moonlight Bay Wood Homes
             </p>
             <p className="mt-1 text-[11px] uppercase tracking-[0.18em] text-muted">
               Consejo · Belize
@@ -109,11 +110,11 @@ export function Studio() {
         {view === "beach" ? (
           <BandPage
             title="Beach"
-            lede="Open bay, not the canal. The two-level villa plus four 20×40 homes on lots 196–199."
-            hero="/homes/villa-beach.jpg"
+            lede="Open bay, not the canal. Four Plett 20×40 wood homes on lots 196–199."
+            hero="/homes/beach-hero.jpg"
             aerial="/homes/aerial-beach.jpg"
             homes={[...homesIn("beach")]}
-            extra={<VillaNote siting="beach" />}
+            extra={<CatalogNote size="20×40" />}
             onPick={(n) => setLot(n)}
             selected={selected}
           />
@@ -121,11 +122,11 @@ export function Studio() {
         {view === "canal" ? (
           <BandPage
             title="Canal"
-            lede="The same two-level villa, sited on the waterway. Decks sit on dry land at a 5 ft drop."
-            hero="/homes/villa-canal.jpg"
+            lede="Plett 20×30 wood homes on dry land. Decks sit at a 5 ft drop to the waterway."
+            hero="/homes/canal-hero.jpg"
             aerial="/homes/aerial-canal.jpg"
             homes={[...homesIn("canal")]}
-            extra={<VillaNote siting="canal" />}
+            extra={<CatalogNote size="20×30" />}
             onPick={(n) => setLot(n)}
             selected={selected}
           />
@@ -133,7 +134,7 @@ export function Studio() {
         {view === "gate" ? (
           <BandPage
             title="Gated entrance"
-            lede="Lots 330, 315, 314, 169, 168, 167 and 165. The gate sits beside the first house. One road past every home. Furnished $180k–$250k."
+            lede="Lots 330, 315, 314, 169, 168, 167 and 165. The gate sits beside the first house. One road past every home. Unfurnished $180k–$250k."
             hero="/homes/aerial-gate.jpg"
             aerial="/homes/aerial-gate.jpg"
             homes={[...homesIn("gate")]}
@@ -144,7 +145,7 @@ export function Studio() {
         {view === "value" ? (
           <BandPage
             title="Canal value"
-            lede="Lots 103–114 on the inland canal, furthest from the ocean. Mixed models, 400 sq ft decks, kayak steps. Furnished $180k–$250k."
+            lede="Lots 103–114 on the inland canal, furthest from the ocean. Mixed wood models, 400 sq ft decks, kayak steps. Unfurnished $180k–$250k."
             hero="/homes/aerial-canal.jpg"
             aerial="/homes/aerial-canal.jpg"
             homes={[...homesIn("canal"), ...homesIn("canal-value")]}
@@ -158,9 +159,21 @@ export function Studio() {
       </main>
 
       <footer className="border-t border-line px-4 py-10 text-sm text-muted">
-        <div className="mx-auto flex max-w-6xl flex-col gap-3 md:flex-row md:justify-between">
-          <p>Moonlight Bay de Consejo · Corozal District, Belize</p>
-          <p>Concept only. Not for permit or fabrication. Confirm lots with the developer.</p>
+        <div className="mx-auto flex max-w-6xl flex-col gap-3 md:flex-row md:items-end md:justify-between">
+          <div>
+            <p className="font-display text-base text-ink">Moonlight Bay Wood Homes</p>
+            <p className="mt-1">de Consejo · Corozal District, Belize</p>
+            <p className="mt-1">Plett catalog wood shells. Unfurnished. Concept only.</p>
+          </div>
+          <a
+            href={CONTAINER_SITE}
+            className="inline-flex items-center gap-2 text-lagoon"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Furnished container villas at moonlightbaycontainerhomes
+            <ArrowUpRight size={14} />
+          </a>
         </div>
       </footer>
     </div>
@@ -172,29 +185,29 @@ function HomeView({ go }: { go: (v: View) => void }) {
     <>
       <section className="relative min-h-[78vh] overflow-hidden">
         <img
-          src="/homes/villa-beach.jpg"
-          alt="Two-level salt-white villa on the beach"
+          src="/homes/beach-hero.jpg"
+          alt="Salt-white wood bungalow on the beach at Consejo"
           className="absolute inset-0 size-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/25 to-ink/10" />
         <div className="relative mx-auto flex min-h-[78vh] max-w-6xl flex-col justify-end px-4 pb-14 pt-28">
           <p className="text-xs uppercase tracking-[0.22em] text-foam/80">
-            Beach · Canal · Gate · Value
+            Plett wood catalog · Unfurnished shells
           </p>
           <h1 className="mt-3 max-w-3xl font-display text-4xl leading-[1.05] text-foam sm:text-6xl">
-            Furnished homes from $180k to $250k, on every kind of lot.
+            Wood homes from $180k to $250k, on every kind of lot.
           </h1>
           <p className="mt-4 max-w-xl text-base text-foam/85">
-            Same Caribbean Salt furniture and MEP kit — bought in bulk and
-            fitted at the factory. Skins and decks change. The kit does not.
+            Stick-built bungalows from the Plett floor-plan catalog. You furnish.
+            Skins and decks change. The shell is wood.
           </p>
         </div>
       </section>
 
       <section className="mx-auto grid max-w-6xl gap-4 px-4 py-12 sm:grid-cols-2 lg:grid-cols-4">
         {[
-          { id: "beach" as const, img: "/homes/villa-beach.jpg", t: "Beach", d: "Bay-front villas and 20×40 homes on 196–199." },
-          { id: "canal" as const, img: "/homes/villa-canal.jpg", t: "Canal", d: "Waterway lots with kayak steps down a 5 ft bank." },
+          { id: "beach" as const, img: "/homes/beach-hero.jpg", t: "Beach", d: "Bay-front 20×40 Plett homes on 196–199." },
+          { id: "canal" as const, img: "/homes/canal-hero.jpg", t: "Canal", d: "Waterway lots with kayak steps down a 5 ft bank." },
           { id: "gate" as const, img: "/homes/aerial-gate.jpg", t: "Gate", d: "Moderate cottages just inside the entrance." },
           { id: "value" as const, img: "/homes/aerial-canal.jpg", t: "Canal value", d: "Lots 103–114, furthest from the ocean." },
         ].map((c) => (
@@ -216,19 +229,17 @@ function HomeView({ go }: { go: (v: View) => void }) {
   );
 }
 
-function VillaNote({ siting }: { siting: "beach" | "canal" }) {
+function CatalogNote({ size }: { size: string }) {
   return (
     <aside className="rounded-xl border border-line bg-foam p-5">
       <p className="text-xs uppercase tracking-[0.18em] text-muted">
-        Two-level display villa
+        Plett Home Builders
       </p>
-      <h3 className="mt-1 font-display text-2xl">
-        {siting === "beach" ? "The terrace is the living room." : "The house on the canal."}
-      </h3>
+      <h3 className="mt-1 font-display text-2xl">{size} wood plans</h3>
       <p className="mt-2 text-sm text-muted">
-        Four 40 ft high-cubes, about 1,057 sq ft. V2 two-bed keeps the canal or
-        bay end as a dining lounge. V3 closes it as a guest suite. Same
-        Caribbean Salt kit as the cottages.
+        Single-story stick-built modules from the 2026 floor-plan catalog.
+        Hip or gable roofs, clapboard or board-and-batten, teak verandas.
+        Unfurnished — furniture is not in the price.
       </p>
     </aside>
   );
@@ -302,7 +313,7 @@ function HouseCard({ home }: { home: Home }) {
       <div className="grid gap-6 p-5 sm:grid-cols-[1fr_1fr]">
         <div>
           <p className="text-xs uppercase tracking-[0.18em] text-muted">
-            Lot #{home.lot} · {home.plan.id}
+            Lot #{home.lot} · Plett {home.plan.id}
           </p>
           <h2 className="mt-1 font-display text-3xl">{home.title}</h2>
           <p className="mt-2 text-sm text-muted">{skin.finish}</p>
@@ -319,7 +330,7 @@ function HouseCard({ home }: { home: Home }) {
               </dd>
             </div>
             <div>
-              <dt className="text-muted">Furnished</dt>
+              <dt className="text-muted">Unfurnished</dt>
               <dd className="font-medium tabular-nums">{usd(home.price)}</dd>
             </div>
             <div>
@@ -352,12 +363,12 @@ function LotsView({
   const meta = BANDS.find((b) => b.id === band)!;
   return (
     <div className="mx-auto max-w-6xl px-4 py-10">
-      <p className="text-xs uppercase tracking-[0.18em] text-muted">Collection</p>
-      <h1 className="mt-2 font-display text-4xl">Mix the styles. Keep the kit.</h1>
+      <p className="text-xs uppercase tracking-[0.18em] text-muted">Plett 2026 catalog</p>
+      <h1 className="mt-2 font-display text-4xl">Mix the styles. Keep the wood shell.</h1>
       <p className="mt-3 max-w-2xl text-muted">
         Big plans on the beach, middle on the canal, medium on the park street,
-        small on the inner street. Each lot is a different skin so the row never
-        clones.
+        small on the inner street. Each lot is a different clapboard skin so the
+        row never clones. Furniture is not included.
       </p>
       <div className="mt-6 flex flex-wrap gap-2">
         {BANDS.filter((b) => ["beach", "canal", "park", "street"].includes(b.id)).map((b) => (
@@ -405,16 +416,16 @@ function LotsView({
 function LivingView() {
   return (
     <div className="mx-auto max-w-6xl px-4 py-10">
-      <p className="text-xs uppercase tracking-[0.18em] text-muted">Caribbean Salt</p>
-      <h1 className="mt-2 font-display text-4xl">One furniture kit. Every house.</h1>
+      <p className="text-xs uppercase tracking-[0.18em] text-muted">Unfurnished shell</p>
+      <h1 className="mt-2 font-display text-4xl">You furnish. We deliver the wood house.</h1>
       <p className="mt-3 max-w-2xl text-muted">
-        Limewash, sand linen, sea glass, oiled teak, one lagoon note. Kitchen,
-        baths, millwork and lighting go in at the factory. Loose pieces pack in
-        the module so island labor stays light.
+        Unlike the container villas, these Plett homes arrive empty. Limewash
+        walls, teak floors, kitchen millwork, and a bath rough-in. No sofa, no
+        bed, no factory furniture kit.
       </p>
       <div className="mt-8 grid gap-4 sm:grid-cols-2">
-        <img src="/homes/interior-living.jpg" alt="Living room" className="h-72 w-full rounded-xl object-cover" />
-        <img src="/homes/interior-bedroom.jpg" alt="Bedroom" className="h-72 w-full rounded-xl object-cover" />
+        <img src="/homes/interior-living.jpg" alt="Unfurnished living and kitchen" className="h-72 w-full rounded-xl object-cover" />
+        <img src="/homes/interior-bedroom.jpg" alt="Unfurnished bedroom" className="h-72 w-full rounded-xl object-cover" />
       </div>
       <div className="mt-8 grid grid-cols-3 gap-3 sm:grid-cols-6">
         {PALETTE.map((c) => (
@@ -428,15 +439,18 @@ function LivingView() {
         ))}
       </div>
       <ul className="mt-8 grid gap-2 sm:grid-cols-2">
-        {FFE_KIT.map((item) => (
+        {SHELL_INCLUDES.map((item) => (
           <li key={item} className="rounded-xl border border-line bg-foam px-4 py-3 text-sm">
             {item}
           </li>
         ))}
       </ul>
       <p className="mt-6 text-sm text-muted">
-        Lower-cost shells, high-end pieces. Gate and canal-value homes furnish
-        from $180,000 to $250,000.
+        Unfurnished shells from $180,000 to $250,000. Want the fully furnished
+        container line instead?{" "}
+        <a href={CONTAINER_SITE} className="text-lagoon" target="_blank" rel="noreferrer">
+          moonlightbaycontainerhomes
+        </a>
       </p>
     </div>
   );
@@ -474,4 +488,3 @@ function MapView() {
     </div>
   );
 }
-
